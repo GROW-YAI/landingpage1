@@ -23,4 +23,15 @@ dist-ssr
 *.sln
 *.sw?
 
+# environment variables
 .env
+.env.local
+.env.production
+.env*.local
+
+# next.js build output
+.next/
+
+# Vite build output
+dist
+dist-ssr
