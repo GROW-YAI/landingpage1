@@ -1,242 +1,141 @@
-# Helicimush - Mushroom Products Landing Page
+# 🍄 Helicimush - Mushroom Products Landing Page
 
-## Project Overview
+> Modern responsive landing page for organic mushroom products company
 
-Helicimush is a modern, responsive landing page for a mushroom products company that specializes in growing fresh mushrooms and transforming them into convenient, nutritious products. The website showcases the company's commitment to organic, sustainable farming practices and highlights the health benefits of mushroom-based products.
-
-### What the Site Does
-
-The Helicimush website serves as an online presence for the company, featuring:
-
-- **Hero Section**: A visually appealing introduction with animated mushroom imagery and a compelling tagline about nature's finest mushrooms for wellness
-- **About Products**: Detailed information about the organic and natural mushroom products, highlighting health benefits and sustainable practices
-- **Product Showcase**: A carousel/slider displaying the company's product lineup with images and descriptions
-- **About the Innovator**: Information about the company's founder and their vision for mushroom-based nutrition
-- **Client Showcase**: Testimonials and social proof from satisfied customers
-- **Footer**: Contact information, social media links, and company branding
-
-### Main Features
-
-- **Responsive Design**: Fully responsive layout that works seamlessly on desktop, tablet, and mobile devices
-- **Smooth Animations**: Beautiful entrance animations and floating effects using Framer Motion
-- **Dynamic Content**: Product information and descriptions fetched from external API (Google Sheets)
-- **Accessible Design**: Integrated with the Boafo accessibility widget to ensure the site is accessible to all users, including those with disabilities
-- **Modern UI**: Clean, nature-inspired design with green and orange color palette reflecting organic mushroom products
-
-### Technologies Used
-
-- **React 19**: Modern JavaScript library for building user interfaces
-- **Vite**: Fast build tool and development server
-- **Tailwind CSS 4**: Utility-first CSS framework for rapid UI development
-- **Framer Motion**: Animation library for smooth, performant animations
-- **Swiper**: Modern touch slider for product carousels
-- **Lucide React**: Beautiful, customizable icons
-- **Axios**: Promise-based HTTP client for API requests
-- **Boafo Accessibility Widget**: Makes the site accessible to all users (see integration details below)
-
-### Accessibility with Boafo Widget
-
-This project uses the **Boafo Accessibility Widget** to make the website accessible to all users, including those with visual, motor, or cognitive disabilities. The widget provides features such as:
-
-- Text-to-speech functionality
-- Font size adjustment
-- Contrast and color adjustments
-- Keyboard navigation support
-- Screen reader compatibility
-
-The Boafo widget ensures compliance with WCAG (Web Content Accessibility Guidelines) standards, making the site inclusive and user-friendly for everyone.
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Build-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS 4](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Accessibility](https://img.shields.io/badge/WCAG-Compliant-green)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+[![License](https://img.shields.io/badge/License-Proprietary-red)](#license)
 
 ---
 
-## How to Get Your Boafo API Key
+## 📋 Project Overview
 
-To use the Boafo Accessibility Widget in your project, you need to obtain an API key from Boafo. Follow these steps:
+Helicimush is a modern, fully responsive landing page for a premium mushroom products company. We specialize in sustainable organic farming and transforming fresh mushrooms into convenient, nutritious wellness products.
 
-1. **Visit the Boafo Website**: Go to [boafo.co](https://boafo.co)
-
-2. **Create an Account**: Click on the registration or sign-up button to create a new account
-
-3. **Verify Your Email**: Check your email inbox and verify your account by clicking the verification link
-
-4. **Access the Dashboard**: Log in to your Boafo account and navigate to the dashboard
-
-5. **Generate API Key**: In the dashboard, locate the API key section and generate a new API key for your project
-
-6. **Copy Your API Key**: Copy the generated API key (it will look something like `boafo_xxxxxxxxxxxx`)
-
-> **Important**: Keep your API key secure and never commit it to version control. Use environment variables to store sensitive credentials.
+The website demonstrates our commitment to organic farming practices, highlights mushroom health benefits, and serves as the official online presence for the brand.
 
 ---
 
-## How to Integrate the Boafo Widget
+## ✨ Key Features
 
-Follow these steps to integrate the Boafo Accessibility Widget into your Next.js/React project:
-
-### Step 1: Install the Package
-
-Install the Boafo accessibility widget package using npm:
-
-```bash
-npm install boafo-accessibility-widget
-```
-
-### Step 2: Create a Client Component
-
-Create a new client component at `app/components/BoafoWidgetInitializer.tsx` that reads the API key from the environment variable:
-
-```tsx
-"use client";
-
-import { useEffect } from "react";
-import { initializeBoafoWidget } from "boafo-accessibility-widget";
-
-export default function BoafoWidgetInitializer() {
-  useEffect(() => {
-    const apiKey = process.env.NEXT_PUBLIC_BOAFO_API_KEY;
-    if (apiKey) {
-      initializeBoafoWidget(apiKey);
-    }
-  }, []);
-
-  return null; // nothing to render
-}
-```
-
-### Step 3: Import and Use in Layout
-
-Import and use the `BoafoWidgetInitializer` component inside `app/layout.tsx`:
-
-```tsx
-import BoafoWidgetInitializer from './components/BoafoWidgetInitializer';
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        <BoafoWidgetInitializer />
-        {children}
-      </body>
-    </html>
-  );
-}
-```
-
-### Step 4: TypeScript Support (Optional)
-
-For TypeScript support, create `src/types/global.d.ts` with the module declaration:
-
-```typescript
-declare module 'boafo-accessibility-widget' {
-  export function initializeBoafoWidget(apiKey: string): void;
-}
-```
-
-Update `tsconfig.json` to include the types directory:
-
-```json
-{
-  "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./src/types"]
-  }
-}
-```
-
-### Step 5: For Static HTML Integration
-
-If you're using a static HTML setup instead of a React/Next.js framework, add the Boafo script tag directly to your HTML file using the `data-api-key` attribute pointing to your environment variable:
-
-```html
-<script
-  src="https://unpkg.com/boafo-accessibility-widget/public/widget.bundle.js"
-  data-api-key="YOUR_BOAFO_API_KEY"
-  defer
-></script>
-```
-
-> **Note**: For static HTML, you'll need to use a build tool or server-side processing to replace `YOUR_BOAFO_API_KEY` with the actual environment variable value at build time.
+| Feature | Description |
+|---------|-------------|
+| 📱 **Responsive Design** | Perfectly optimized for desktop, tablet, and mobile devices |
+| 🎬 **Smooth Animations** | Professional entrance animations & floating effects using Framer Motion |
+| 🔄 **Dynamic Content** | Product information synced automatically from Google Sheets API |
+| ♿ **Full Accessibility** | Boafo Accessibility Widget integration for WCAG compliance |
+| 🎨 **Modern UI** | Nature-inspired design with organic green & earth tone color palette |
 
 ---
 
-## Setup Instructions
+## 🚀 Site Sections
+
+1. **Hero Section** - Animated introduction with brand messaging & call to action
+2. **About Products** - Organic farming practices and mushroom health benefits
+3. **Product Showcase** - Interactive carousel with full product lineup
+4. **About The Innovator** - Founder profile and company vision
+5. **Client Testimonials** - Social proof & customer reviews
+6. **Footer** - Contact details, social media links & company information
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **React 19** | Frontend framework |
+| **Vite** | Build tool & development server |
+| **Tailwind CSS 4** | Utility-first styling |
+| **Framer Motion** | Animation library |
+| **Swiper** | Touch-enabled product carousel |
+| **Lucide React** | Modern icon library |
+| **Axios** | HTTP client for API requests |
+| **Boafo Widget** | Accessibility compliance solution |
+
+---
+
+## ♿ Accessibility (Boafo Widget)
+
+This project implements the **Boafo Accessibility Widget** to ensure the website is usable by everyone, including users with visual, motor, or cognitive disabilities.
+
+### Widget Capabilities:
+- ✅ Text-to-speech functionality
+- ✅ Adjustable font sizes
+- ✅ Contrast & color scheme modifications
+- ✅ Full keyboard navigation support
+- ✅ Screen reader compatibility
+- ✅ WCAG 2.1 AA compliance
+
+### Getting Your Boafo API Key:
+1. Visit [boafo.co](https://boafo.co)
+2. Register for a new account
+3. Verify your email address
+4. Access your dashboard
+5. Generate an API key for this project
+6. Store securely in environment variables
+
+---
+
+## ⚙️ Installation & Setup
 
 ### Prerequisites
-
-- Node.js (version 18 or higher)
-- npm or yarn package manager
+- Node.js 18+
+- npm / yarn / pnpm
 - Git
 
-### Installation Steps
+### Step 1: Clone Repository
+```bash
+git clone https://github.com/GROW-YAI/landingpage1.git
+cd landingpage1
+```
 
-1. **Clone the Repository**
+### Step 2: Install Dependencies
+```bash
+npm install
+```
 
-   ```bash
-   git clone https://github.com/GROW-YAI/landingpage1.git
-   cd landingpage1
-   ```
+### Step 3: Environment Configuration
+```bash
+# Create environment file
+cp .env.example .env
+```
 
-2. **Install Dependencies**
+Edit `.env` file and add your Boafo API key:
+```env
+VITE_BOAFO_API_KEY=your_boafo_api_key_here
+```
 
-   ```bash
-   npm install
-   ```
+### Step 4: Run Development Server
+```bash
+npm run dev
+```
 
-3. **Set Up Environment Variables**
+Application will be available at `http://localhost:5173`
 
-   Copy the example environment file to create your own `.env` file:
+### 🏗️ Build For Production
+```bash
+# Create optimized production build
+npm run build
 
-   ```bash
-   cp .env.example .env
-   ```
+# Preview production build locally
+npm run preview
+```
 
-   > **Note**: If `.env.example` doesn't exist, create a `.env` file manually in the root directory.
-
-4. **Add Your API Key**
-
-   Open the `.env` file and add your Boafo API key:
-
-   ```env
-   VITE_BOAFO_API_KEY=your_boafo_api_key_here
-   ```
-
-   Replace `your_boafo_api_key_here` with the actual API key you obtained from the Boafo dashboard.
-
-5. **Run the Development Server**
-
-   Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-   The application will be available at `http://localhost:5173` (or the port shown in your terminal).
-
-6. **Build for Production**
-
-   To create a production build:
-
-   ```bash
-   npm run build
-   ```
-
-   The built files will be in the `dist` directory.
-
-7. **Preview Production Build**
-
-   To preview the production build locally:
-
-   ```bash
-   npm run preview
-   ```
-
-### Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `VITE_BOAFO_API_KEY` | Your Boafo Accessibility Widget API key | Yes |
+Build artifacts are generated in the `dist/` directory.
 
 ---
 
-## Project Structure
+## 🔑 Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|:--------:|
+| `VITE_BOAFO_API_KEY` | Boafo Accessibility Widget API Key | ✅ |
+
+---
+
+## 📁 Project Structure
 
 ```
 landingpage1/
@@ -252,19 +151,19 @@ landingpage1/
 │   ├── assets/
 │   │   └── images/
 │   ├── components/
-│   │   ├── AboutInnovator.jsx
-│   │   ├── AboutProducts.jsx
-│   │   ├── Footer.jsx
-│   │   ├── HeroSection.jsx
 │   │   ├── NavBar.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── AboutProducts.jsx
 │   │   ├── Products.jsx
-│   │   └── ShowcaseSection.jsx
+│   │   ├── AboutInnovator.jsx
+│   │   ├── ShowcaseSection.jsx
+│   │   └── Footer.jsx
 │   ├── types/
 │   │   └── global.d.ts
-│   ├── App.css
 │   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
 ├── .env
 ├── .gitignore
 ├── eslint.config.js
@@ -276,14 +175,18 @@ landingpage1/
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+---
 
-This project is private and proprietary.
+## 📜 License
+
+This project is private and proprietary. All rights reserved.
 
 ---
 
-**Built with ❤️ by the Helicimush Team**
+<div align="center">
+Built with ❤️ by the Helicimush Team
+</div>

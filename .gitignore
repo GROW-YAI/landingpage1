@@ -35,3 +35,18 @@ dist-ssr
 # Vite build output
 dist
 dist-ssr
+<<<<<<< HEAD
+
+# Build directory
+build/
+
+# Test and documentation files
+widget-test.html
+ToDo.md
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+pnpm-lock.yaml.*
+=======
+>>>>>>> origin/main
